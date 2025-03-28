@@ -12,9 +12,11 @@ public class Face {
   private BitmapFont scorefont;
   private Texture texture;
   private Rectangle bounds;
+  private String name;
 
-  public Face(String txtName) {
-    this.texture = new Texture(txtName);
+  public Face(String name) {
+    this.name = name;
+    this.texture = new Texture(name+".png");
     this.scorefont = new BitmapFont();
     scorefont.getData().setScale(3f);
   }
@@ -39,4 +41,18 @@ public class Face {
     texture.dispose();
     scorefont.dispose();
   }
-}
+
+  public boolean estMario() {
+    return (name.endsWith("mario"));
+    // if ((name.equals("mario"))) {
+    //   return true;
+    // }
+    //   else {
+    //     return false; c'est pour les pecnos
+      
+      
+    }
+
+    
+  }
+
